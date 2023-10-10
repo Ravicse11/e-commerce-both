@@ -8,7 +8,7 @@ export default function PrivateRoute() {
   const [ok, setOk] = useState(false);
   const [auth, setAuth] = useAuth();
   // const host="http://localhost:8080";
-  const host="https://e-commerce-shop-nfi9.onrender.com";
+  const host=process.env.REACT_APP_BACKEND_URL;
   useEffect(() => {
     const authCheck = async () => {
       const res = await axios.get(`${host}/api/v1/auth/user-auth`);

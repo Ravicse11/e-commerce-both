@@ -17,7 +17,7 @@ const CartPage = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   // const host="http://localhost:8080";
-  const host="https://e-commerce-shop-nfi9.onrender.com";
+  const host=process.env.REACT_APP_BACKEND_URL;
   //total price
   const totalPrice = () => {
     try {

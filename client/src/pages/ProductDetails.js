@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/ProductDetailsStyles.css";
 
+
 const ProductDetails = () => {
   const [cart, setCart] = useCart();
   const params = useParams();
@@ -15,7 +16,7 @@ const ProductDetails = () => {
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [auth]=useAuth();
   // const host="http://localhost:8080";
-  const host="https://e-commerce-shop-nfi9.onrender.com";
+  const host=process.env.REACT_APP_BACKEND_URL;
   //initalp details
   useEffect(() => {
     if (params?.slug) getProduct();

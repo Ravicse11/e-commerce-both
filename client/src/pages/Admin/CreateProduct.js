@@ -18,7 +18,7 @@ const CreateProduct = () => {
   const [shipping, setShipping] = useState("");
   const [photo, setPhoto] = useState("");
   // const host="http://localhost:8080";
-  const host="https://e-commerce-shop-nfi9.onrender.com";
+  const host=process.env.REACT_APP_BACKEND_URL;
   
   //get all category
   const getAllCategory = async () => {

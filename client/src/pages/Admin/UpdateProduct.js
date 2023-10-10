@@ -20,7 +20,7 @@ const UpdateProduct = () => {
   const [photo, setPhoto] = useState("");
   const [id, setId] = useState("");
   // const host="http://localhost:8080";
-  const host="https://e-commerce-shop-nfi9.onrender.com";
+  const host=process.env.REACT_APP_BACKEND_URL;
   //get single product
   const getSingleProduct = async () => {
     try {
@@ -30,7 +30,6 @@ const UpdateProduct = () => {
       setName(data.product.name);
       setId(data.product._id);
       setDescription(data.product.description);
-      setPrice(data.product.price);
       setPrice(data.product.price);
       setQuantity(data.product.quantity);
       setShipping(data.product.shipping);

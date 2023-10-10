@@ -22,7 +22,7 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
   const [auth, setAuth] = useAuth();
   // const host="http://localhost:8080";
-  const host="https://e-commerce-shop-nfi9.onrender.com";
+  const host=process.env.REACT_APP_BACKEND_URL;
   //get all cat
   const getAllCategory = async () => {
     try {

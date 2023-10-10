@@ -16,7 +16,7 @@ const Register = () => {
   const navigate = useNavigate();
 const location=useLocation();
 // const host="http://localhost:8080";
-const host="https://e-commerce-shop-nfi9.onrender.com";
+const host=process.env.REACT_APP_BACKEND_URL;
   // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,14 +31,7 @@ const host="https://e-commerce-shop-nfi9.onrender.com";
       });
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
-        setAuth({
-          ...auth,
-          user: res.data.user,
-          token: res.data.token,
-        });
-        localStorage.setItem("auth", JSON.stringify(res.data));
-        navigate(location.state || "/");
-        // navigate("/");
+        navigate("/login");
       } else {
         toast.error(res.data.message);
       }

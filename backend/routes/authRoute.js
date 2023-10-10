@@ -43,7 +43,7 @@ router.put("/profile", requireSignIn, updateProfileController);
 //orders
 router.get("/orders", requireSignIn, getOrdersController);
 
-//delete order
+
 
 
 //all orders

@@ -7,6 +7,7 @@ import JWT from "jsonwebtoken";
 export const registerController = async (req, res) => {
   try {
     const { name, email, password, phone, address, answer } = req.body;
+    
     //validations
     if (!name) {
       return res.send({ error: "Name is Required" });
@@ -170,9 +171,9 @@ export const updateProfileController = async (req, res) => {
     const { name, email, password, address, phone } = req.body;
     const user = await userModel.findById(req.user._id);
     //password
-    // if (password && password.length < 6) {
-    //   return res.json({ error: "Passsword is required and at least 6 character long" });
-    // }
+    if (password && password.length < 6) {
+      return res.json({ error: "Passsword is required and at least 6 character long" });
+    }
     const hashedPassword = password ? await hashPassword(password) : undefined;
     const updatedUser = await userModel.findByIdAndUpdate(
       req.user._id,

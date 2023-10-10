@@ -4,7 +4,7 @@ import { useSearch } from "../context/search";
 const Search = () => {
   const [values, setValues] = useSearch();
   // const host="http://localhost:8080";
-  const host="https://e-commerce-shop-nfi9.onrender.com";
+  const host=process.env.REACT_APP_BACKEND_URL;
   return (
     <Layout title={"Search results"}>
       <div className="container">
